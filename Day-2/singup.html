@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width:30%;
+            height:400px;
+        }
+        h3{
+            text-align: center;
+        }
+        input{
+            display: block;
+            margin: auto;
+            
+        }
+        h2{
+            padding-top: 10px;
+            text-align: center;
+        }
+        button{
+            display: block;
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <form id="form" >
+            <h2>Sign UP</h2>
+            <h3>Full Name</h3>
+            <input id="name" placeholder="Enter your full name"/>
+            <h3>Email</h3>
+            <input id="email" placeholder="Enter email"/>
+            <h3>Password</h3>
+            <input id="password" placeholder="Enter password"/>
+            <button>Sign Up</button>
+        </form>
+        
+    </div>
+
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",submitfuc)
+    function submitfuc(){
+           var signupdetail=[] 
+        event.preventDefault()
+        var name =form.name.value
+       // console.log(name)
+        var email=form.email.value
+       // console.log(email)
+        var password=form.password.value
+       // console.log(password)
+       
+        var obj={
+            "Name":name,
+            "Email":email,
+            "Password":password,
+        }
+        signupdetail.push(obj)
+       // console.log(detail)
+        localStorage.setItem("userdetail",JSON.stringify(signupdetail))
+        window.location.href="login.html"
+    }
+
+</script>
